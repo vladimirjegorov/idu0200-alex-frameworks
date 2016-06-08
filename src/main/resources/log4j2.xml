@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <!-- https://logging.apache.org/log4j/2.0/manual/lookups.html#WebLookup -->
+    <!-- TODO: user.dir is a hack, in real life you would not have this -->
+    <File name="A1" fileName="${sys:user.dir}/src/main/webapp/log/article.log" append="false">
+      <PatternLayout pattern="%d %-5p [%t] %C: %m%n"/>
+    </File>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Logger name="ee.ttu.idu0200" level="info">
+      <AppenderRef ref="A1"/>
+    </Logger>
+    <Root level="info">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
