@@ -15,4 +15,6 @@ $(document).ready(function () {
       $form.find("#content").text(data.content);
     });
   });
+
+  $("a[data-toggle='modal']").click();
 });
